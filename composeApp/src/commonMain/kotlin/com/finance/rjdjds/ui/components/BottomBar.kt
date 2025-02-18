@@ -25,11 +25,13 @@ import androidx.compose.ui.input.key.Key.Companion.R
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.finance.rjdjds.ui.GAME
 import com.finance.rjdjds.ui.QUIZ
 import com.finance.rjdjds.ui.SETTINGS
 import com.finance.rjdjds.ui.TIPS
 import com.finance.rjdjds.ui.WALLET
 import finance.composeapp.generated.resources.Res
+import finance.composeapp.generated.resources.game
 import finance.composeapp.generated.resources.quiz
 import finance.composeapp.generated.resources.settings
 import finance.composeapp.generated.resources.tips
@@ -47,8 +49,9 @@ fun BottomBar(
     val screens = listOf(
         Pair(Res.drawable.wallet, WALLET),
         Pair(Res.drawable.quiz, QUIZ),
+        Pair(Res.drawable.game, GAME),
+        Pair(Res.drawable.tips, TIPS),
         Pair(Res.drawable.settings, SETTINGS),
-        Pair(Res.drawable.tips, TIPS)
     )
 
 

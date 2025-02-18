@@ -19,6 +19,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.finance.rjdjds.data.db.DayDao
 import com.finance.rjdjds.data.local.tips
+import com.finance.rjdjds.ui.GAME
 import com.finance.rjdjds.ui.INCOME
 import com.finance.rjdjds.ui.OUTCOME
 import com.finance.rjdjds.ui.POLICY
@@ -30,6 +31,7 @@ import com.finance.rjdjds.ui.TIPS_DET
 import com.finance.rjdjds.ui.WALLET
 import com.finance.rjdjds.ui.components.BottomBar
 import com.finance.rjdjds.ui.components.bck
+import com.finance.rjdjds.ui.screens.game.GameScreen
 import com.finance.rjdjds.ui.screens.policy
 import com.finance.rjdjds.ui.screens.quiz.QuizScreen
 import com.finance.rjdjds.ui.screens.settings.SettingsScreen
@@ -84,6 +86,7 @@ fun App(
                 TIPS -> true
                 SETTINGS -> true
                 QUIZ -> true
+                GAME -> true
                 else -> false
             }
         }
@@ -103,6 +106,9 @@ fun App(
             navController, WALLET,
             modifier = Modifier.padding(pd).fillMaxSize().background(bck)
         ){
+            composable(GAME){
+                GameScreen()
+            }
             composable(WALLET){
                 WalletScreen(balance, days, {
                     navController.navigate(INCOME)
